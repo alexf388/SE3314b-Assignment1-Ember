@@ -1,11 +1,99 @@
-<h2>Welcome to SE3314b's Blog</h2>
 <ul class="circle">
     <ul>
         {{#each item in model}}
             <li>{{#link-to 'post' item.id}}{{item.title}}{{/link-to}}</li>
         {{/each}}
     </ul>
+    <p> This is supposed to be the course logo, did not apply css.</p>
+    <img src="https://placehold.it/300x100">
 </ul>
+<div class="container">
+    <table class="table table-striped table-hover">
+        <thead>
+        <tr>
+            <th>
+                Company
+            </th>
+            <th>
+                Open Price
+            </th>
+            <th>
+                Current Price
+            </th>
+            <th>Value</th>
+            <th>-</th>
+            <th>%</th>
+            <th>
+                Share Volume
+            </th>
+            <th>
+
+            </th>
+        </tr>
+        </thead>
+        <!-- Dynamically generate the rest-->
+        <tr>
+            <th>
+                Microsoft
+            </th>
+            <th>
+                MSFT's Open Price
+            </th>
+            <th>
+                Current Price of MSFT
+            </th>
+            <th>
+                Change
+            </th>
+        </tr>
+    </table>
+    <div class = "row">
+        <div class = "col-lg-6">
+            <h3> Market By Order</h3>
+            <table class = "table table-striped">
+                <thead>
+                <tr>
+                    <th colspan ="2">
+                        Buy
+                    </th>
+                    <th colspan = "2">
+                        Sell
+                    </th>
+                </tr>
+                <tr>
+                    <th>Volume</th>
+                    <th>Price</th>
+                    <th>Volume</th>
+                    <th>Price</th>
+                </tr>
+                </thead>
+            </table>
+        </div>
+        <div class = "col-lg-6">
+            <h3> Market By Price</h3>
+            <table class = "table table-striped">
+                <thead>
+                <tr>
+                    <th colspan ="2">
+                        Buy
+                    </th>
+                    <th colspan = "2">
+                        Sell
+                    </th>
+                </tr>
+                <tr>
+                    <th>#</th>
+                    <th>Volume</th>
+                    <th>Price</th>
+                    <th>Price</th>
+                    <th>Volume</th>
+                    <th>#</th>
+                </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+</div>
 {{#link-to 'addNewPost' class="button round" }}Add New Post{{/link-to}}
 
 
