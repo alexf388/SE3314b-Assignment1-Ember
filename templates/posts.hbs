@@ -38,7 +38,7 @@
             {{#each item in model}}
             <tr>
                 <th>
-                    <a {{action 'showThisShit' item.imageName }}> {{item.name}} </a>
+                    <a {{action 'showThisShit' item.imageName }}>{{item.name}} </a>
                 </th>
                 <th>
                     {{item.openPrice}}
@@ -55,11 +55,11 @@
                 </th>
                 <th>
                     <!-- buy and sell buttons go here -->
-                    <button {{action 'buyStock' item.link}}>
-                        Buy
+                    <button class='btn-xs'>
+                        {{#link-to 'placeBidOrder' item}}Buy{{/link-to}}
                     </button>
-                    <button type="button" class="btn-xs">
-                        {{#link-to 'placeSellOrder'}}Sell{{/link-to}}
+                    <button class="btn-xs">
+                        {{#link-to 'placeSellOrder'item}}Sell{{/link-to}}
                     </button>
                 </th>
 

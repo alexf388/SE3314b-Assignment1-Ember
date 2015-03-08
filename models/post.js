@@ -5,6 +5,7 @@
 StockMarket.Post= DS.Model.extend({
     name: DS.attr('string'),
     imageName: DS.attr('string'),
+    link: DS.attr('string'),
     openPrice: DS.attr('number'),
     lastSale: DS.attr('number'),
     changeNet: DS.attr('number'),
