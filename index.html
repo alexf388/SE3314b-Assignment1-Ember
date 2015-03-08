@@ -16,23 +16,29 @@
     <script src="libs/ember-data.js"></script>
     <script src="libs/localstorage-adapter-0.3.2.js"></script>
 
-
+    <!--courseBlog and router go here -->
     <script src="courseBlog.js"></script>
     <script src="router.js"></script>
 
+    <!--controllers go here -->
     <script src="controllers/about.js"></script>
     <script src="controllers/contact.js"></script>
     <script src="controllers/post.js"></script>
     <script src="controllers/addNewPost.js"></script>
+    <script src="controllers/posts.js"></script>
 
+    <!--models go here -->
     <script src="models/post.js"></script>
 
+    <!--routes go here -->
     <script src="routes/posts.js"></script>
     <script src="routes/post.js"></script>
 
+    <!-- templates go here -->
     <script>
         EmberHandlebarsLoader.loadTemplates([
-            'posts','application','addNewCompany'
+            'posts','addNewCompany','application',
+            'post', 'placeBidOrder', 'placeSellOrder'
         ]);
     </script>
 

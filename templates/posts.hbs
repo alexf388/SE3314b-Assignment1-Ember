@@ -1,9 +1,3 @@
-<ul class="circle">
-    <p> This is supposed to be the course logo, did not apply css.</p>
-    <img src="images/logo.png">
-</ul>
-
-
 <div class="container">
     {{#link-to 'addNewCompany' }}
     <div class="btn btn-primary btn-lg">
@@ -11,110 +5,127 @@
     </div>
     {{/link-to}}
 
+    <!--controller vars go here -->
+    {{companyChosen}} {{imageString}}
 
-    <table id="stocksummary" class="table table-hover table-bordered">
-        <thead>
+
+
+
+    <div class="container">
+        <table id="stocksummary" class="table table-hover table-bordered">
+            <thead>
+                <tr>
+
+                    <th>
+                        Company
+                    </th>
+                    <th>
+                        Open Price
+                    </th>
+                    <th>
+                        Current Price
+                    </th>
+                    <th>Change Net - % </th>
+                    <th>
+                        Share Volume
+                    </th>
+                    <th>
+                        <!-- buttons go here -->
+                    </th>
+                </tr>
+            </thead>
+            <!--this is needed to make the table-hover and table-bordered shit to work probably due to ember-->
             <tr>
-
-                <th>
-                    Company
-                </th>
-                <th>
-                    Open Price
-                </th>
-                <th>
-                    Current Price
-                </th>
-                <th>Change Net - % </th>
-                <th>
-                    Share Volume
-                </th>
-                <th>
-                    <!-- buttons go here -->
-                </th>
             </tr>
-        </thead>
 
 
-        <!--this is needed to make the table-hover and table-bordered shit to work probably due to ember-->
-        <tr>
-        </tr>
+            <!-- Dynamically generate the rest-->
+            {{#each item in model}}
+            <tr>
+                <th>
+                    <a {{action 'showThisShit' item.imageName }}> {{item.name}} </a>
+                </th>
+                <th>
+                    {{item.openPrice}}
+                </th>
+                <th>
+                    {{item.lastSale}}
+                </th>
+                <th>
+                    {{item.changeNet}}
+                </th>
+                <th>
+                    {{item.shareVolume}}
+                </th>
+                <th>
+                    <!-- buy and sell buttons go here -->
+                    <button type="button" class="btn-xs">
+                        {{#link-to 'placeBidOrder' }}Buy{{/link-to}}
+                    </button>
 
-        <!-- Dynamically generate the rest-->
-        {{#each item in model}}
-        <tr>
-            <th>
-                {{item.name}}
-            </th>
-            <th>
-                {{item.openPrice}}
-            </th>
-            <th>
-                {{item.lastSale}}
-            </th>
-            <th>
-                {{item.changeNet}}
-            </th>
-            <th>
-                {{item.shareVolume}}
-            </th>
-        </tr>
-        {{/each}}
-    </table>
+                    <button type="button" class="btn-xs">
+                        {{#link-to 'placeSellOrder' }}Sell{{/link-to}}
+                    </button>
+                </th>
 
-    <div class="row">
-        <div class="col-lg-5">
-            <h3> Market By Order</h3>
-            <table class="table table-striped">
-                <thead>
-                    <tr>
-                        <th colspan="2">
-                            Buy
-                        </th>
-                        <th colspan="2">
-                            Sell
-                        </th>
-                    </tr>
-                    <tr>
-                        <th>Volume</th>
-                        <th>Price</th>
-                        <th>Volume</th>
-                        <th>Price</th>
-                    </tr>
-                </thead>
-            </table>
+            </tr>
+            {{/each}}
+        </table>
+
+        <div class="row">
+            <div class="col-lg-5">
+                <h3> Market By Order</h3>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th colspan="2">
+                                Buy
+                            </th>
+                            <th colspan="2">
+                                Sell
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>Volume</th>
+                            <th>Price</th>
+                            <th>Volume</th>
+                            <th>Price</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+
+            <div class="col-lg-5">
+                <h3> Market By Price</h3>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th colspan="2">
+                                Buy
+                            </th>
+                            <th colspan="2">
+                                Sell
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>#</th>
+                            <th>Volume</th>
+                            <th>Price</th>
+                            <th>Price</th>
+                            <th>Volume</th>
+                            <th>#</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+
+            <div class="col-lg-2">
+                <h3> Company Logo </h3> {{#if companyChosen }}
+                <img {{bind-attr src=imageString}} width="150"> {{/if}}
+            </div>
         </div>
 
-        <div class="col-lg-5">
-            <h3> Market By Price</h3>
-            <table class="table table-striped">
-                <thead>
-                    <tr>
-                        <th colspan="2">
-                            Buy
-                        </th>
-                        <th colspan="2">
-                            Sell
-                        </th>
-                    </tr>
-                    <tr>
-                        <th>#</th>
-                        <th>Volume</th>
-                        <th>Price</th>
-                        <th>Price</th>
-                        <th>Volume</th>
-                        <th>#</th>
-                    </tr>
-                </thead>
-            </table>
-        </div>
+
+
     </div>
-
-    <div class="col-lg-2">
-        <h3> Company Logo </h3>
-        <img src="images/facebook.png" width="150">
-    </div>
-
-
-</div>
-{{#link-to 'addNewPost' class="button round" }}Add New Post{{/link-to}}
+    {{#link-to 'addNewPost' class="button round" }}Add New Post{{/link-to}}

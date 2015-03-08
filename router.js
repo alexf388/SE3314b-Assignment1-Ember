@@ -6,7 +6,8 @@ CourseBlog.Router.map(function() {
     this.resource('post', {path: 'posts/:post_id'});
     this.resource('addNewCompany');
     this.resource('addNewPost');
-
+    this.resource('placeBidOrder');
+    this.resource('placeSellOrder');
 
 
 });

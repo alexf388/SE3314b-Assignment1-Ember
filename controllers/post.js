@@ -1,7 +1,7 @@
 /**
  * Created by Abdelkader on 2015-02-04.
  */
-CourseBlog.PostController = Ember.ObjectController.extend({
+CourseBlog.PostController = Ember.Controller.extend({
     isEditing: false,
     actions: {
         edit: function () {

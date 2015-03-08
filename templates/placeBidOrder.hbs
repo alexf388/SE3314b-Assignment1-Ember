@@ -1,0 +1,29 @@
+
+<div class="container">
+    <form>
+        <div class="row">
+            <div class="large-12 columns">
+                <label>Number of Shares
+					{{input value=numberOfShares  id="numberOfShares" type ="number" }}
+                </label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="large-12 columns">
+                <label>Purchase Price
+					{{input value=purchasePrice  id="purchasePrice" type="number"}}
+                </label>
+            </div>
+        </div>
+    </form>
+
+
+</div>
+<div class="container">
+    <button type="button" class="btn-xs" {{action 'submit' numberOfShares purchasePrice}}>
+        Submit
+    </button>
+    <button type="button" class="btn-xs" {{action 'cancel'}}>
+		Cancel
+    </button>
+</div>
