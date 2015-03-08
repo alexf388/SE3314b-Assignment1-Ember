@@ -34,19 +34,19 @@
 	    {{#each item in model}}
         <tr>
 				<th>
-					{{#link-to 'post' item.id}}{{item.name}}{{/link-to}}
+					{{item.name}}
 				</th>
 				<th>
-					{{#link-to 'post' item.id}}{{item.openPrice}}{{/link-to}}
+					{{item.openPrice}}
 				</th>
                 <th>
-					{{#link-to 'post' item.id}}{{item.lastSale}}{{/link-to}}
+					{{item.lastSale}}
                 </th>
                 <th>
-					{{#link-to 'post' item.id}}{{item.changeNet}}{{/link-to}}
+					{{item.changeNet}}
                 </th>
                 <th>
-					{{#link-to 'post' item.id}}{{item.shareVolume}}{{/link-to}}
+					{{item.shareVolume}}
                 </th>
         </tr>
 	    {{/each}}
