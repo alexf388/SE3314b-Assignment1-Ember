@@ -2,7 +2,7 @@
  * Created by Abdelkader on 2015-02-01.
  */
 // We create a model of type CourseBlog.Posts
-CourseBlog.Post = DS.Model.extend({
+StockMarket.Post= DS.Model.extend({
     name: DS.attr('string'),
     imageName: DS.attr('string'),
     openPrice: DS.attr('number'),
@@ -12,7 +12,7 @@ CourseBlog.Post = DS.Model.extend({
 
 });
 
-CourseBlog.Post.FIXTURES = [
+StockMarket.Post.FIXTURES = [
     {
         id: 1,
         name: "Microsoft Corporation (MSFT)",

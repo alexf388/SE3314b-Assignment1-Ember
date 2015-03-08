@@ -1,7 +1,7 @@
 /**
  * Created by alex on 07/03/15.
  */
-CourseBlog.PostsController = Ember.ObjectController.extend({
+StockMarket.PostsController = Ember.ObjectController.extend({
     companyChosen : false,
     imageString: '',
 
