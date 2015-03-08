@@ -9,9 +9,15 @@
 		{{#link-to 'addNewPost' }}Add New Company{{/link-to}}
 
 	</button>
-    <table class="table table-striped table-hover table-bordered">
+
+    <div class="alert alert-success" id="events-result">
+        Here is the result of event.
+    </div>
+
+    <table id="stocksummary" class="table table-hover table-bordered">
         <thead>
         <tr>
+
             <th>
                 Company
             </th>
@@ -30,6 +36,13 @@
             </th>
         </tr>
         </thead>
+
+
+	    <!--this is needed to make the table-hover and table-bordered shit to work probably due to ember-->
+	    <tr>
+        </tr>
+
+
         <!-- Dynamically generate the rest-->
 	    {{#each item in model}}
         <tr>
@@ -51,8 +64,9 @@
         </tr>
 	    {{/each}}
     </table>
+
     <div class = "row">
-        <div class = "col-lg-6">
+        <div class = "col-lg-5">
             <h3> Market By Order</h3>
             <table class = "table table-striped">
                 <thead>
@@ -73,7 +87,8 @@
                 </thead>
             </table>
         </div>
-        <div class = "col-lg-6">
+
+        <div class = "col-lg-5">
             <h3> Market By Price</h3>
             <table class = "table table-striped">
                 <thead>
@@ -96,6 +111,12 @@
                 </thead>
             </table>
         </div>
+
+	    <div class = "col-lg-2">
+		    <h3> Company Logo </h3>
+            <img src="facebook.png" width="150">
+	    </div>
+
     </div>
 </div>
 {{#link-to 'addNewPost' class="button round" }}Add New Post{{/link-to}}
