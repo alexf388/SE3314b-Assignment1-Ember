@@ -1,19 +1,22 @@
-<h2>Add new post</h2>
+<div class="container">
+    <h2>Add new post</h2>
+
 
     <form>
-        <div class="row">
+        <div class="container">
             <div class="large-12 columns">
-                <label>Tile
-                    {{input value=title  id="title" type="text" }}
+                <label>Name
+                    {{input value=name id="name" type="text" }}
                 </label>
             </div>
         </div>
-        <div class="row">
+        <div class="container">
             <div class="large-12 columns">
-                <label>Body
-                    {{textarea value=body  id="body" }}
+                <label> Open Price
+                    {{textarea value=openPrice id="openPrice" }}
                 </label>
             </div>
         </div>
     </form>
     <a href="#" class="button radius" {{action 'save'}}>Save</a>
+</div>

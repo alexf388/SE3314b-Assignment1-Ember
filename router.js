@@ -11,4 +11,6 @@ CourseBlog.Router.map(function() {
     this.resource('post', {path: 'posts/:post_id'});
     this.resource('addNewPost');
 
+
+
 });

@@ -5,8 +5,8 @@ CourseBlog.AddNewPostController = Ember.Controller.extend({
     actions: {
         save: function() {
             var newPost = this.store.createRecord('post', {
-                title: this.get('title'),
-                body: this.get('body')
+                name: this.get('name'),
+                openPrice: this.get('openPrice')
             });
             newPost.save();
             this.transitionToRoute('posts');

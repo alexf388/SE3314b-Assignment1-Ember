@@ -1,14 +1,15 @@
 <ul class="circle">
-    <ul>
-        {{#each item in model}}
-            <li>{{#link-to 'post' item.id}}{{item.title}}{{/link-to}}</li>
-        {{/each}}
-    </ul>
     <p> This is supposed to be the course logo, did not apply css.</p>
-    <img src="https://placehold.it/300x100">
+    <img src="logo.png">
 </ul>
+
+
 <div class="container">
-    <table class="table table-striped table-hover">
+	<button type="button" class="btn btn-primary btn-lg">
+		{{#link-to 'addNewPost' }}Add New Company{{/link-to}}
+
+	</button>
+    <table class="table table-striped table-hover table-bordered">
         <thead>
         <tr>
             <th>
@@ -20,32 +21,35 @@
             <th>
                 Current Price
             </th>
-            <th>Value</th>
-            <th>-</th>
-            <th>%</th>
+            <th>Change Net - % </th>
             <th>
                 Share Volume
             </th>
             <th>
-
+				<!-- buttons go here -->
             </th>
         </tr>
         </thead>
         <!-- Dynamically generate the rest-->
+	    {{#each item in model}}
         <tr>
-            <th>
-                Microsoft
-            </th>
-            <th>
-                MSFT's Open Price
-            </th>
-            <th>
-                Current Price of MSFT
-            </th>
-            <th>
-                Change
-            </th>
+				<th>
+					{{#link-to 'post' item.id}}{{item.name}}{{/link-to}}
+				</th>
+				<th>
+					{{#link-to 'post' item.id}}{{item.openPrice}}{{/link-to}}
+				</th>
+                <th>
+					{{#link-to 'post' item.id}}{{item.lastSale}}{{/link-to}}
+                </th>
+                <th>
+					{{#link-to 'post' item.id}}{{item.changeNet}}{{/link-to}}
+                </th>
+                <th>
+					{{#link-to 'post' item.id}}{{item.shareVolume}}{{/link-to}}
+                </th>
         </tr>
+	    {{/each}}
     </table>
     <div class = "row">
         <div class = "col-lg-6">

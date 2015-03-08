@@ -8,6 +8,12 @@ CourseBlog.ApplicationAdapter = DS.LSAdapter.extend({
     namespace: 'CourseBlog'
 });
 
+CourseBlog.PostAdapter = DS.FixtureAdapter.extend();
+
+
+
+
+
 
 
 
