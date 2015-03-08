@@ -1,8 +1,13 @@
 /**
  * Created by alex on 07/03/15.
  */
+<<<<<<< HEAD
 CourseBlog.PostsController = Ember.ObjectController.extend({
     companyChosen: false,
+=======
+StockMarket.PostsController = Ember.ObjectController.extend({
+    companyChosen : false,
+>>>>>>> bbae5083417dd88422b1498a619dcd2467343912
     imageString: '',
     actions: {
         showThisShit: function (imageName) {
