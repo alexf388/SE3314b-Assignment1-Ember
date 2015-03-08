@@ -4,6 +4,9 @@
 StockMarket.PostsController = Ember.ObjectController.extend({
     companyChosen : false,
     imageString: '',
+    PositiveNet: false,
+    NegativeNet: false,
+    NeutralNet: false,
 
     actions:{
         showThisShit:function(imageName){
@@ -15,5 +18,6 @@ StockMarket.PostsController = Ember.ObjectController.extend({
                 //console.log("shortName: ", shortName);
                 this.set('imageString', result);
         }
+
     }
 });
