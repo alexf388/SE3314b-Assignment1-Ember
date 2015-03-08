@@ -1,3 +1,7 @@
+<!--controller vars go here -->
+{{companyChosen}}
+{{imageString}}
+
 <ul class="circle">
     <p> This is supposed to be the course logo, did not apply css.</p>
     <img src="logo.png">
@@ -9,10 +13,6 @@
 		{{#link-to 'addNewPost' }}Add New Company{{/link-to}}
 
 	</button>
-
-    <div class="alert alert-success" id="events-result">
-        Here is the result of event.
-    </div>
 
     <table id="stocksummary" class="table table-hover table-bordered">
         <thead>
@@ -47,7 +47,7 @@
 	    {{#each item in model}}
         <tr>
 				<th>
-					{{item.name}}
+					<a  {{action 'showThisShit' item.imageName }}> {{item.name}} </a>
 				</th>
 				<th>
 					{{item.openPrice}}
@@ -114,7 +114,10 @@
 
 	    <div class = "col-lg-2">
 		    <h3> Company Logo </h3>
-            <img src="facebook.png" width="150">
+
+		    {{#if companyChosen }}
+                <img {{bind-attr src=imageString}} width="150">
+			{{/if}}
 	    </div>
 
     </div>
