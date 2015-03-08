@@ -1,7 +1,6 @@
 /**
  * Created by Abdelkader on 2015-02-01.
  */
-// We create a route of type CourseBlog.PostsRoute
 StockMarket.PostsRoute = Ember.Route.extend({
     model: function() {
      return  this.store.find('post') ;

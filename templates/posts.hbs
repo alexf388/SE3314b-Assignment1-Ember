@@ -4,13 +4,8 @@
         Add new Company
     </div>
     {{/link-to}}
-
     <!--controller vars go here -->
     {{companyChosen}} {{imageString}}
-
-
-
-
     <div class="container">
         <table id="stocksummary" class="table table-hover table-bordered">
             <thead>
@@ -43,7 +38,7 @@
             {{#each item in model}}
             <tr>
                 <th>
-                    <a {{action 'showThisShit' item.imageName }}> {{item.name}} </a>
+                    <a {{action 'showThisShit' item.imageName }}>{{item.name}} </a>
                 </th>
                 <th>
                     {{item.openPrice}}
@@ -57,15 +52,15 @@
                 </th>
                 <th>
                     {{item.shareVolume}}
+                    {{item.link}}
                 </th>
                 <th>
                     <!-- buy and sell buttons go here -->
-                    <button type="button" class="btn-xs">
-                        {{#link-to 'placeBidOrder' }}Buy{{/link-to}}
+                    <button class='btn-xs'>
+                        {{#link-to 'placeBidOrder' item}}Buy{{/link-to}}
                     </button>
-
-                    <button type="button" class="btn-xs">
-                        {{#link-to 'placeSellOrder' }}Sell{{/link-to}}
+                    <button class="btn-xs">
+                        {{#link-to 'placeSellOrder'item}}Sell{{/link-to}}
                     </button>
                 </th>
 
@@ -125,8 +120,12 @@
                 <img {{bind-attr src=imageString}} width="150"> {{/if}}
             </div>
         </div>
+<<<<<<< HEAD
+    </div>
+=======
 
 
 
     </div>
 </div>
+>>>>>>> bbae5083417dd88422b1498a619dcd2467343912
