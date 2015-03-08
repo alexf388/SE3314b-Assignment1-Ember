@@ -3,16 +3,11 @@
 {{imageString}}
 
 <ul class="circle">
-    <p> This is supposed to be the course logo, did not apply css.</p>
     <img src="logo.png">
 </ul>
 
 
 <div class="container">
-	<button type="button" class="btn btn-primary btn-lg">
-		{{#link-to 'addNewPost' }}Add New Company{{/link-to}}
-
-	</button>
 
     <table id="stocksummary" class="table table-hover table-bordered">
         <thead>
@@ -61,6 +56,17 @@
                 <th>
 					{{item.shareVolume}}
                 </th>
+	            <th>
+	                <!-- buy and sell buttons go here -->
+		            <button type="button" class="btn-xs">
+			            {{#link-to 'placeBidOrder' }}Buy{{/link-to}}
+		            </button>
+
+                    <button type="button" class="btn-xs">
+			            {{#link-to 'placeSellOrder' }}Sell{{/link-to}}
+                    </button>
+	            </th>
+
         </tr>
 	    {{/each}}
     </table>
