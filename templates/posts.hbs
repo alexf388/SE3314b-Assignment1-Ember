@@ -1,125 +1,120 @@
 <ul class="circle">
     <p> This is supposed to be the course logo, did not apply css.</p>
-    <img src="logo.png">
+    <img src="images/logo.png">
 </ul>
 
 
 <div class="container">
-	<button type="button" class="btn btn-primary btn-lg">
-		{{#link-to 'addNewPost' }}Add New Company{{/link-to}}
-
-	</button>
-
-    <div class="alert alert-success" id="events-result">
-        Here is the result of event.
+    {{#link-to 'addNewCompany' }}
+    <div class="btn btn-primary btn-lg">
+        Add new Company
     </div>
+    {{/link-to}}
+
 
     <table id="stocksummary" class="table table-hover table-bordered">
         <thead>
-        <tr>
+            <tr>
 
-            <th>
-                Company
-            </th>
-            <th>
-                Open Price
-            </th>
-            <th>
-                Current Price
-            </th>
-            <th>Change Net - % </th>
-            <th>
-                Share Volume
-            </th>
-            <th>
-				<!-- buttons go here -->
-            </th>
-        </tr>
+                <th>
+                    Company
+                </th>
+                <th>
+                    Open Price
+                </th>
+                <th>
+                    Current Price
+                </th>
+                <th>Change Net - % </th>
+                <th>
+                    Share Volume
+                </th>
+                <th>
+                    <!-- buttons go here -->
+                </th>
+            </tr>
         </thead>
 
 
-	    <!--this is needed to make the table-hover and table-bordered shit to work probably due to ember-->
-	    <tr>
+        <!--this is needed to make the table-hover and table-bordered shit to work probably due to ember-->
+        <tr>
         </tr>
-
 
         <!-- Dynamically generate the rest-->
-	    {{#each item in model}}
+        {{#each item in model}}
         <tr>
-				<th>
-					{{item.name}}
-				</th>
-				<th>
-					{{item.openPrice}}
-				</th>
-                <th>
-					{{item.lastSale}}
-                </th>
-                <th>
-					{{item.changeNet}}
-                </th>
-                <th>
-					{{item.shareVolume}}
-                </th>
+            <th>
+                {{item.name}}
+            </th>
+            <th>
+                {{item.openPrice}}
+            </th>
+            <th>
+                {{item.lastSale}}
+            </th>
+            <th>
+                {{item.changeNet}}
+            </th>
+            <th>
+                {{item.shareVolume}}
+            </th>
         </tr>
-	    {{/each}}
+        {{/each}}
     </table>
 
-    <div class = "row">
-        <div class = "col-lg-5">
+    <div class="row">
+        <div class="col-lg-5">
             <h3> Market By Order</h3>
-            <table class = "table table-striped">
+            <table class="table table-striped">
                 <thead>
-                <tr>
-                    <th colspan ="2">
-                        Buy
-                    </th>
-                    <th colspan = "2">
-                        Sell
-                    </th>
-                </tr>
-                <tr>
-                    <th>Volume</th>
-                    <th>Price</th>
-                    <th>Volume</th>
-                    <th>Price</th>
-                </tr>
+                    <tr>
+                        <th colspan="2">
+                            Buy
+                        </th>
+                        <th colspan="2">
+                            Sell
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>Volume</th>
+                        <th>Price</th>
+                        <th>Volume</th>
+                        <th>Price</th>
+                    </tr>
                 </thead>
             </table>
         </div>
 
-        <div class = "col-lg-5">
+        <div class="col-lg-5">
             <h3> Market By Price</h3>
-            <table class = "table table-striped">
+            <table class="table table-striped">
                 <thead>
-                <tr>
-                    <th colspan ="2">
-                        Buy
-                    </th>
-                    <th colspan = "2">
-                        Sell
-                    </th>
-                </tr>
-                <tr>
-                    <th>#</th>
-                    <th>Volume</th>
-                    <th>Price</th>
-                    <th>Price</th>
-                    <th>Volume</th>
-                    <th>#</th>
-                </tr>
+                    <tr>
+                        <th colspan="2">
+                            Buy
+                        </th>
+                        <th colspan="2">
+                            Sell
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>#</th>
+                        <th>Volume</th>
+                        <th>Price</th>
+                        <th>Price</th>
+                        <th>Volume</th>
+                        <th>#</th>
+                    </tr>
                 </thead>
             </table>
         </div>
-
-	    <div class = "col-lg-2">
-		    <h3> Company Logo </h3>
-            <img src="facebook.png" width="150">
-	    </div>
-
     </div>
+
+    <div class="col-lg-2">
+        <h3> Company Logo </h3>
+        <img src="images/facebook.png" width="150">
+    </div>
+
+
 </div>
 {{#link-to 'addNewPost' class="button round" }}Add New Post{{/link-to}}
-
-
-
