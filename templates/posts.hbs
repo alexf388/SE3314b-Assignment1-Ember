@@ -4,13 +4,8 @@
         Add new Company
     </div>
     {{/link-to}}
-
     <!--controller vars go here -->
     {{companyChosen}} {{imageString}}
-
-
-
-
     <div class="container">
         <table id="stocksummary" class="table table-hover table-bordered">
             <thead>
@@ -56,15 +51,15 @@
                 </th>
                 <th>
                     {{item.shareVolume}}
+                    {{item.link}}
                 </th>
                 <th>
                     <!-- buy and sell buttons go here -->
-                    <button type="button" class="btn-xs">
-                        {{#link-to 'placeBidOrder' }}Buy{{/link-to}}
+                    <button {{action 'buyStock' item.link}}>
+                        Buy
                     </button>
-
                     <button type="button" class="btn-xs">
-                        {{#link-to 'placeSellOrder' }}Sell{{/link-to}}
+                        {{#link-to 'placeSellOrder'}}Sell{{/link-to}}
                     </button>
                 </th>
 
@@ -124,8 +119,4 @@
                 <img {{bind-attr src=imageString}} width="150"> {{/if}}
             </div>
         </div>
-
-
-
     </div>
-    {{#link-to 'addNewPost' class="button round" }}Add New Post{{/link-to}}

@@ -8,6 +8,4 @@ CourseBlog.Router.map(function() {
     this.resource('addNewPost');
     this.resource('placeBidOrder');
     this.resource('placeSellOrder');
-
-
 });
