@@ -1,9 +1,9 @@
 
 <div class="container">
-    {{id}}{{name}}
+    <p id="link"> {{link}} </p>
     <form>
         <div class="row">
-            <h3>Sell {{name}} shares</h3>
+            <h3>Purchase {{name}} Shares</h3>
             <div class="large-12 columns">
                 <label>Number of Shares
 					{{input value=numberOfShares  id="numberOfShares" type ="number" }}
@@ -22,7 +22,7 @@
 
 </div>
 <div class="container">
-    <button type="button" class="btn-xs" {{action 'submit' numberOfShares purchasePrice}}>
+    <button type="button" class="btn-xs" {{action 'submit'}}>
         Submit
     </button>
     <button type="button" class="btn-xs" {{action 'cancel'}}>
