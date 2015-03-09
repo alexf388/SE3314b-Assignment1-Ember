@@ -43,7 +43,8 @@
             {{#each item in filteredContent}}
             <tr>
                 <th>
-                    <a {{action 'showThisShit' item.imageName }}>{{item.name}} </a>
+                    <a {{action 'showThisShit' item.imageName }}>
+	                    {{#link-to 'posts.marketByOrder'}}{{item.name}}{{/link-to}} </a>
                 </th>
                 <th>
                     {{item.openPrice}}
@@ -77,13 +78,7 @@
         </table>
 
         <div class="row">
-            <div class="col-lg-5">
-                <!--Outlet Here-->
-            </div>
-
-            <div class="col-lg-5">
-                <!--Outlet here-->
-            </div>
+	        {{outlet}}
 
             <div class="col-lg-2">
                 <h3> Company Logo </h3> {{#if companyChosen }}
@@ -93,10 +88,6 @@
 
     </div>
 
-	<!-- render marketByOrder here? -->
-	{{#link-to 'posts.marketByOrder'}}marketByOrder{{/link-to}}
-	{{#link-to 'posts.marketByPrice'}}marketByPrice{{/link-to}}
-	{{outlet}}
 
 
 
