@@ -1,12 +1,12 @@
 <div class="container">
 
-    <div class="btn btn-primary btn-lg" {{action "sortBy" "shareVolume"}}>
+    <div class="btn btn-primary btn-lg" {{action "sortByVolume" "shareVolume"}}>
         Most Active By Volume
     </div>
-    <div class="btn btn-primary btn-lg" {{action "sortBy" "changeNet"}}>
+    <div class="btn btn-primary btn-lg" {{action "sortByGainers" }}>
         Gainers
     </div>
-    <div class="btn btn-primary btn-lg" {{action "sortBy" "changeNet"}}>
+    <div class="btn btn-primary btn-lg" {{action "sortByLosers"}}>
         Losers
     </div>
     <!--controller vars go here -->
@@ -40,7 +40,7 @@
 
 
             <!-- Dynamically generate the rest-->
-            {{#each item in filterPeople}}
+            {{#each item in filteredContent}}
             <tr>
                 <th>
                     <a {{action 'showThisShit' item.imageName }}>{{item.name}} </a>

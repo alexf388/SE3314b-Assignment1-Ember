@@ -12,31 +12,13 @@ StockMarket.PostsController = Ember.ArrayController.extend({
 
 
     //used for sorting table
-    sortProperties: ['id'],
-    theFilter: "",
+    filter: '',
 
-    checkFilterMatch: function(theObject, str) {
-        var field, match;
-        match = false;
-        for (field in theObject) {
-            if (theObject[field].toString().slice(0, str.length) === str) {
-                match = true;
-            }
-        }
-        return match;
-    },
+    filteredContent: function(){
+        var companies = this.get('arrangedContent');
 
-    filterPeople: (function() {
-        return this.get("arrangedContent").filter((function(_this) {
-            return function(theObject, index, enumerable) {
-                if (_this.get("theFilter")) {
-                    return _this.checkFilterMatch(theObject, _this.get("theFilter"));
-                } else {
-                    return true;
-                }
-            };
-        })(this));
-    }).property("theFilter", "sortProperties"),
+        return companies;
+    }.property('arrangedContent'),
     //end: used for sorting table
 
     actions: {
@@ -54,9 +36,17 @@ StockMarket.PostsController = Ember.ArrayController.extend({
             this.transitionToRoute('placeBidOrder',{queryParams:{company:"astring"}});
         },
         //sort table action
-        sortBy: function(property) {
-            this.set("sortProperties", [property]);
+        sortByVolume: function(property) {
+            this.set('sortProperties', [property]);
+            this.set('sortAscending', false);
+        },
+        sortByGainers: function(){
+            this.set('sortProperties',["changeNet"]);
+            this.set('sortAscending', false);
+        },
+        sortByLosers: function(){
+            this.set('sortProperties',["changeNet"]);
+            this.set('sortAscending', true);
         }
-
     }
 });
