@@ -5,7 +5,8 @@ StockMarket = Ember.Application.create();
 
 StockMarket.ApplicationSerializer = DS.LSSerializer.extend();
 StockMarket.ApplicationAdapter = DS.LSAdapter.extend({
-    namespace: 'StockMarket'
+    namespace: 'StockMarket',
+    namespace: 'Bids'
 });
 
 StockMarket.PostAdapter = DS.FixtureAdapter.extend();

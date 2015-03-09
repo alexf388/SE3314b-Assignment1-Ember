@@ -24,17 +24,15 @@ StockMarket.PostsController = Ember.ArrayController.extend({
     actions: {
         showThisShit: function (imageName) {
             this.set('companyChosen', true);
-            //var shortNameTemp = shortName;
-            //var imageFormat = ".png";
-            //var result = shortNameTemp.concat(imageFormat);
             var result = imageName;
-            //console.log("shortName: ", shortName);
             this.set('imageString', result);
         },
+        /*
         buyStock: function (company) {
-            console.log(company);
+            console.log("fucking company:", company);
             this.transitionToRoute('placeBidOrder',{queryParams:{company:"astring"}});
         },
+        */
         //sort table action
         sortByVolume: function(property) {
             this.set('sortProperties', [property]);

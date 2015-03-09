@@ -96,6 +96,20 @@
                             <th>Price</th>
                         </tr>
                     </thead>
+
+	                <tr></tr>
+
+	                {{#each bid in model}}
+					<tr>
+						<th>
+							{{bid.volume}}
+						</th>
+						<th>
+							{{bid.price}}
+						</th>
+					</tr>
+	                {{/each}}
+
                 </table>
             </div>
 
