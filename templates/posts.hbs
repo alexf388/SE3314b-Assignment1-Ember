@@ -1,11 +1,16 @@
 <div class="container">
-    {{#link-to 'addNewCompany' }}
-    <div class="btn btn-primary btn-lg">
-        Add new Company
+
+    <div class="btn btn-primary btn-lg" {{action "sortBy" "shareVolume"}}>
+        Most Active By Volume
     </div>
-    {{/link-to}}
+    <div class="btn btn-primary btn-lg" {{action "sortBy" "changeNet"}}>
+        Gainers
+    </div>
+    <div class="btn btn-primary btn-lg" {{action "sortBy" "changeNet"}}>
+        Losers
+    </div>
     <!--controller vars go here -->
-    {{companyChosen}} {{imageString}}
+    {{companyChosen}}
     <div class="container">
         <table id="stocksummary" class="table table-hover table-bordered">
             <thead>
@@ -35,7 +40,7 @@
 
 
             <!-- Dynamically generate the rest-->
-            {{#each item in model}}
+            {{#each item in filterPeople}}
             <tr>
                 <th>
                     <a {{action 'showThisShit' item.imageName }}>{{item.name}} </a>
@@ -56,7 +61,6 @@
                 </th>
                 <th>
                     {{item.shareVolume}}
-                    {{item.link}}
                 </th>
                 <th>
                     <!-- buy and sell buttons go here -->
