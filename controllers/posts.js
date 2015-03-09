@@ -23,7 +23,7 @@ StockMarket.PostsController = Ember.ObjectController.extend({
         buyStock: function (company) {
             console.log(company);
             this.transitionToRoute('placeBidOrder',{queryParams:{company:"astring"}});
-        }   
+        }
 
     }
 });

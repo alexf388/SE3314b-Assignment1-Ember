@@ -10,11 +10,8 @@ StockMarket.ApplicationAdapter = DS.LSAdapter.extend({
 
 StockMarket.PostAdapter = DS.FixtureAdapter.extend();
 
-StockMarket.MyObj = Ember.Object.extend({
-    isPositive:function(){
-        return this.get('') > 0;
-    }.property('')
-});
+
+
 
 
 

@@ -47,8 +47,11 @@
                     {{item.lastSale}}
                 </th>
                 <th>
-	                {{item.changeNet}}
-                    <img {{bind-attr src=item.changeNetSymbol}}>
+                    <p>
+	                    {{item.changeNet}}
+                        <img {{bind-attr src=item.changeNetSymbol}}>
+	                    {{item.changePercent}}%
+                    </p>
 
                 </th>
                 <th>
