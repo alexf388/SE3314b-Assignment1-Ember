@@ -10,7 +10,6 @@
         Losers
     </div>
     <!--controller vars go here -->
-    {{companyChosen}}
     <div class="container">
         <table id="stocksummary" class="table table-hover table-bordered">
             <thead>
@@ -43,8 +42,11 @@
             {{#each item in filteredContent}}
             <tr>
                 <th>
-                    <a {{action 'showThisShit' item.imageName }}>
-	                    {{#link-to 'posts.marketByOrder'}}{{item.name}}{{/link-to}} </a>
+                    <a {{action 'showThisShit' item.imageName}} >
+	                    <p {{action 'lol' item.id}}>
+	                    {{#link-to 'posts.marketByOrder' item.id}}{{item.name}}{{/link-to}}
+	                    </p>
+                    </a>
                 </th>
                 <th>
                     {{item.openPrice}}

@@ -8,18 +8,21 @@ StockMarket.PlaceSellOrderController = Ember.ObjectController.extend({
             var newSell;
             var volume = this.get('numberOfShares');
             var price = this.get('purchasePrice');
-            var link = document.getElementById('link').textContent;
+            var link = this.get ('id');
+
+            //var link = document.getElementById('link').textContent;
+
             //console.log("numberOfShares: ", volume);
             //console.log("price: ", price);
             //console.log("link: ", link);
 
             if (volume != null && price != null && link!= null){
                 newSell = this.store.createRecord('sell',{
-                    link: link,
+                    companyid: link,
                     volume: volume,
                     price: price
                 });
-                console.log("newSell: ", newSell);
+                console.log("link:", link);
                 newSell.save();
                 this.transitionToRoute('posts');
             }
