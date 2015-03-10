@@ -7,18 +7,20 @@ StockMarket.PlaceBidOrderController = Ember.ObjectController.extend({
             var newBuy;
             var volume = this.get('numberOfShares');
             var price = this.get('purchasePrice');
-            var link = document.getElementById('link').textContent;
+            var link = this.get('id');
+            //var link = document.getElementById('link').textContent;
+
             //console.log("numberOfShares: ", volume);
             //console.log("price: ", price);
             //console.log("link: ", link);
 
             if (volume != null && price != null && link!= null){
                 newBuy = this.store.createRecord('buy',{
-                    link: link,
+                    companyid: link,
                     volume: volume,
                     price: price
                 });
-                console.log("newBuy: ", newBuy);
+                console.log("link:", link);
                 newBuy.save();
                 this.transitionToRoute('posts');
             }
