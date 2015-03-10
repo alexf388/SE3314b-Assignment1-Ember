@@ -10,7 +10,7 @@ StockMarket.Router.map(function() {
 
 
 
-     this.resource("posts", {path: '/'}, function(){
+     this.resource("posts", {path: '/:company_id'}, function(){
         //this.resource("marketByOrder");
         //this.route("comment", { path: "/comments/:comment_id" });
          this.route("marketByOrder");
