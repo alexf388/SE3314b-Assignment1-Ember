@@ -6,13 +6,8 @@
             <th colspan="2">
                 Buy
             </th>
-            <th colspan="2">
-                Sell
-            </th>
         </tr>
         <tr>
-            <th>Volume</th>
-            <th>Price</th>
             <th>Volume</th>
             <th>Price</th>
         </tr>
@@ -20,16 +15,48 @@
 
         <tr></tr>
 
-		{{#each bid in model}}
+		{{#each buys}}
             <tr>
                 <th>
-					{{bid.volume}}
+					{{volume}}
                 </th>
                 <th>
-					{{bid.price}}
+					{{price}}
                 </th>
+
             </tr>
 		{{/each}}
+
+
+    </table>
+
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th colspan="2">
+                Sell
+            </th>
+        </tr>
+        <tr>
+            <th>Volume</th>
+            <th>Price</th>
+        </tr>
+        </thead>
+
+        <tr></tr>
+
+		{{#each sells}}
+            <tr>
+                <th>
+					{{volume}}
+                </th>
+                <th>
+					{{price}}
+                </th>
+
+            </tr>
+		{{/each}}
+
 
     </table>
 </div>
