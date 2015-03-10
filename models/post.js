@@ -3,6 +3,8 @@
  */
 // We create a model of type CourseBlog.Posts
 StockMarket.Post= DS.Model.extend({
+    //id: DS.attr(''),
+    companyid: DS.attr(''),
     name: DS.attr('string'),
     link: DS.attr('string'),
     imageName: DS.attr('string'),
@@ -97,6 +99,7 @@ StockMarket.Post.FIXTURES = [
 StockMarket.Post.FIXTURES = [
     {
         id: 1,
+        companyid:1,
         name: "Microsoft Corporation (MSFT)",
         link:"MSFT",
         imageName: "images/microsoft.png",
@@ -110,6 +113,7 @@ StockMarket.Post.FIXTURES = [
     },
     {
         id: 2,
+        companyid:2,
         name: "Apple Inc. (AAPL)",
         link:"AAPL",
         imageName: "images/apple.png",
@@ -123,6 +127,7 @@ StockMarket.Post.FIXTURES = [
     },
     {
         id: 3,
+        companyid:3,
         name: "Facebook, Inc. (FB)",
         link:"FB",
         imageName: "images/facebook.png",
@@ -136,6 +141,7 @@ StockMarket.Post.FIXTURES = [
     },
     {
         id: 4,
+        companyid:4,
         name: "Cisco Systems, Inc.",
         link:"CISCO",
         imageName: "images/cisco.png",
@@ -149,6 +155,7 @@ StockMarket.Post.FIXTURES = [
     },
     {
         id: 5,
+        companyid:5,
         name: "Intel Corporation",
         link:"INTEL",
         imageName: "images/intel.png",

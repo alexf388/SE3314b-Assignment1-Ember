@@ -27,12 +27,29 @@ StockMarket.PostsController = Ember.ArrayController.extend({
             var result = imageName;
             this.set('imageString', result);
         },
-        /*
-        buyStock: function (company) {
-            console.log("fucking company:", company);
-            this.transitionToRoute('placeBidOrder',{queryParams:{company:"astring"}});
+
+        lol: function (id) {
+            //this function will do the trading before the marketByOrder/post_id will load
+            console.log("LULZ");
+
+            var store = this.store;
+            var buys = store.find('buy').then(function(buys){
+                return buys.filterBy('companyid', id)   ;
+            });
+            var sells = store.find('sell').then(function(sells){
+                return sells.filterBy('companyid', id);
+            });
+            console.log("BUYS MOTHERFUCKER: ", buys);
+            console.log("SELLS MOTHERFUCKER: ", sells);
+
         },
-        */
+
+
+        showMoreShit: function(link){
+            this.transitionToRoute('posts/marketByOrder');
+        },
+
+
         //sort table action
         sortByVolume: function(property) {
             this.set('sortProperties', [property]);

@@ -1,9 +1,16 @@
 
 <div class="container">
-    <p id="link"> {{link}} </p>
+    <p id="link"> {{companyid}} </p>
     <form>
         <div class="row">
             <h3>Purchase {{name}} Shares</h3>
+            <div class="large-12 columns">
+                <label>Companyid
+			        {{input value=id  id="id" type ="number" }}
+                </label>
+            </div>
+
+
             <div class="large-12 columns">
                 <label>Number of Shares
 					{{input value=numberOfShares  id="numberOfShares" type ="number" }}

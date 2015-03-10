@@ -7,18 +7,10 @@ StockMarket.Router.map(function() {
     this.resource('addNewPost');
     this.resource('placeBidOrder',{path:'/buy/:post_id'});
     this.resource('placeSellOrder',{path:'/sell/:post_id'});
+     this.resource("posts", {path: '/'}, function(){
+         this.route("marketByOrder", {path: "/marketByOrder/:post_id"});
 
-
-
-     this.resource("posts", {path: '/:company_id'}, function(){
-        //this.resource("marketByOrder");
-        //this.route("comment", { path: "/comments/:comment_id" });
-         this.route("marketByOrder");
-         this.route("marketByPrice");
-
-         //insert route marketByPrice
-
-     });
+});
 
 
 
