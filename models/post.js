@@ -3,7 +3,6 @@
  */
 // We create a model of type CourseBlog.Posts
 StockMarket.Post= DS.Model.extend({
-    companyid: DS.attr(''),
     name: DS.attr('string'),
     link: DS.attr('string'),
     imageName: DS.attr('string'),
