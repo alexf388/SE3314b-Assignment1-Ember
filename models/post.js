@@ -3,7 +3,6 @@
  */
 // We create a model of type CourseBlog.Posts
 StockMarket.Post= DS.Model.extend({
-    //id: DS.attr(''),
     companyid: DS.attr(''),
     name: DS.attr('string'),
     link: DS.attr('string'),
@@ -14,7 +13,9 @@ StockMarket.Post= DS.Model.extend({
     changeNetSymbol: DS.attr('string'),
     changePercent: DS.attr('number'),
     shareVolume: DS.attr('number'),
-    textColor: DS.attr('string')
+    textColor: DS.attr('string'),
+    bidOrders:DS.hasMany('Buy'),
+    sellOrders:DS.hasMany('Sell')
 
     /*
     ,ChangeNet: function() {

@@ -5,7 +5,6 @@
 StockMarket.PostsController = Ember.ArrayController.extend({
     companyChosen : false,
     imageString: '',
-
     PositiveNet: false,
     NegativeNet: false,
     NeutralNet: false,
