@@ -33,6 +33,12 @@ StockMarket.PostsController = Ember.ArrayController.extend({
             this.transitionToRoute('placeBidOrder',{queryParams:{company:"astring"}});
         },
         */
+
+        showMoreShit: function(link){
+            this.transitionToRoute('posts/marketByOrder');
+        },
+
+
         //sort table action
         sortByVolume: function(property) {
             this.set('sortProperties', [property]);
