@@ -29,7 +29,7 @@ StockMarket.PostsController = Ember.ArrayController.extend({
 
         lol: function (id) {
             //this function will do the trading before the marketByOrder/post_id will load
-            console.log("LULZ");
+            //console.log("LULZ");
 
             var store = this.store;
             var buys = store.find('buy').then(function(buys){
@@ -38,8 +38,8 @@ StockMarket.PostsController = Ember.ArrayController.extend({
             var sells = store.find('sell').then(function(sells){
                 return sells.filterBy('companyid', id);
             });
-            console.log("BUYS MOTHERFUCKER: ", buys);
-            console.log("SELLS MOTHERFUCKER: ", sells);
+            //console.log("BUYS MOTHERFUCKER: ", buys);
+            //console.log("SELLS MOTHERFUCKER: ", sells);
 
         },
 
