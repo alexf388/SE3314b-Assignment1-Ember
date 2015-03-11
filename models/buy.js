@@ -3,6 +3,7 @@
  */
 StockMarket.Buy = DS.Model.extend({
     company:DS.belongsTo('Post'),
+    companyid:DS.attr(''),
     volume: DS.attr(''),
     price: DS.attr('')
 

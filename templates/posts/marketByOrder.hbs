@@ -1,94 +1,101 @@
-<div class="col-lg-5">
-    <h3> Market By Order</h3>
-    <table class="table table-striped table-bordered">
-        <thead>
+<h3> Market By Order</h3>
+<div class="row">
+    <div class="col-lg-5">
+        <table class="table table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th colspan="2">
+                        Buy
+                    </th>
+                </tr>
+                <tr>
+                    <th>Volume</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+
+            <tr></tr>
+
+            {{#each buys}}
             <tr>
-                <th colspan="2">
-                    Buy
+                <th>
+                    {{volume}}
                 </th>
-            </tr>
-            <tr>
-                <th>Volume</th>
-                <th>Price</th>
-            </tr>
-        </thead>
-
-        <tr></tr>
-
-        {{#each buys}}
-        <tr>
-            <th>
-                {{volume}}
-            </th>
-            <th>
-                {{price}}
-            </th>
-
-        </tr>
-        {{/each}}
-
-
-    </table>
-</div>
-    <table class="table table-striped table-bordered">
-        <thead>
-            <tr>
-                <th colspan="2">
-                    Sell
+                <th>
+                    {{price}}
                 </th>
+
             </tr>
+            {{/each}}
+        </table>
+    </div>
+    <div class="col-lg-5">
+
+        <table class="table table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th colspan="2">
+                        Sell
+                    </th>
+                </tr>
+                <tr>
+                    <th>Volume</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+
+            <tr></tr>
+
+            {{#each sells}}
             <tr>
-                <th>Volume</th>
-                <th>Price</th>
+                <th>
+                    {{volume}}
+                </th>
+                <th>
+                    {{price}}
+                </th>
+
             </tr>
-        </thead>
-
-        <tr></tr>
-
-        {{#each sells}}
-        <tr>
-            <th>
-                {{volume}}
-            </th>
-            <th>
-                {{price}}
-            </th>
-
-        </tr>
-        {{/each}}
+            {{/each}}
 
 
-    </table>
+        </table>
+    </div>
 </div>
-
 <h3> Market By Price</h3>
-<table class="table table-striped table-bordered">
-    <thead>
-        <tr>
-            <th colspan="3">
-                Buy
-            </th>
-        </tr>
-        <tr>
-            <th>#</th>
-            <th>Volume</th>
-            <th>Price</th>
-        </tr>
-    </thead>
-</table>
+<div class="row">
+    <div class="col-lg-5">
 
-<table class="table table-striped table-bordered">
-    <thead>
-        <tr>
-            <th colspan="3">
-                Sell
-            </th>
-        </tr>
-        <tr>
-            <th>#</th>
-            <th>Volume</th>
-            <th>Price</th>
-        </tr>
-    </thead>
-</table>
+        <table class="table table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th colspan="3">
+                        Buy
+                    </th>
+                </tr>
+                <tr>
+                    <th>#</th>
+                    <th>Volume</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+    <div class="col-lg-5">
+
+        <table class="table table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th colspan="3">
+                        Sell
+                    </th>
+                </tr>
+                <tr>
+                    <th>#</th>
+                    <th>Volume</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+        </table>
+    </div>
 </div>

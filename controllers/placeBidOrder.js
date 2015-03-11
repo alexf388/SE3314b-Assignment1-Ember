@@ -16,11 +16,13 @@ StockMarket.PlaceBidOrderController = Ember.ObjectController.extend({
 
             if (volume != null && price != null && link!= null){
                 newBuy = this.store.createRecord('buy',{
+                    companyid:link,
                     volume: volume,
                     price: price
                 });
                 this.store.find('post',link).then(function(post){
-                    post.get('bidOrders').addObject(newBuy);
+//                    post.get('bidOrders').addObject(newBuy);
+//                    post.save();
                 })
                 newBuy.save();
                 this.transitionToRoute('posts');

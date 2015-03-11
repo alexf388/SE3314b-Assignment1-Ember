@@ -42,10 +42,10 @@
             {{#each item in filteredContent}}
             <tr>
                 <th>
-                    <a {{action 'showThisShit' item.imageName}} >
-	                    <p {{action 'lol' item.id}}>
-	                    {{#link-to 'posts.marketByOrder' item.id}}{{item.name}}{{/link-to}}
-	                    </p>
+                    <a {{action 'showThisShit' item.imageName}}>
+                        <p {{action 'lol' item.id}}>
+                            {{#link-to 'posts.marketByOrder' item.id}}{{item.name}}{{/link-to}}
+                        </p>
                     </a>
                 </th>
                 <th>
@@ -56,9 +56,8 @@
                 </th>
                 <th>
                     <p>
-	                    {{item.changeNet}}
-                        <img {{bind-attr src=item.changeNetSymbol}}>
-	                    {{item.changePercent}}%
+                        {{item.changeNet}}
+                        <img {{bind-attr src=item.changeNetSymbol}}> {{item.changePercent}}%
                     </p>
 
                 </th>
@@ -78,22 +77,22 @@
             </tr>
             {{/each}}
         </table>
-
         <div class="row">
-	        {{outlet}}
-
             <div class="col-lg-2">
                 <h3> Company Logo </h3> {{#if companyChosen }}
                 <img {{bind-attr src=imageString}} width="150"> {{/if}}
             </div>
         </div>
-
-    </div>
-
-
-
+        {{outlet}}
 
 
     </div>
+
 </div>
 
+
+
+
+
+</div>
+</div>
