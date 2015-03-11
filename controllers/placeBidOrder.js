@@ -22,6 +22,11 @@ StockMarket.PlaceBidOrderController = Ember.ObjectController.extend({
                 });
                 console.log("link:", link);
                 newBuy.save();
+
+                var data = this.get('model')
+                //console.log("data: ", data.objectAt(0).get('price'))
+                console.log(data.get('length'))
+
                 this.transitionToRoute('posts');
             }
 
