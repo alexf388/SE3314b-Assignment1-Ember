@@ -4,6 +4,8 @@
 StockMarket.PlaceBidOrderRoute = Ember.Route.extend({
     model: function() {
         console.log("PlaceBidOrderRoute");
-        return this.store.find('sell');
+        return this.store.find('sell').then(function(units){
+            return units;
+        });
     }
 });
