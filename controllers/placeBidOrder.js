@@ -23,8 +23,10 @@ StockMarket.PlaceBidOrderController = Ember.ObjectController.extend({
                 this.store.find('post',link).then(function(post){
 //                    post.get('bidOrders').addObject(newBuy);
 //                    post.save();
+                    newBuy.set('company',post);
+                    newBuy.save();
+
                 })
-                newBuy.save();
                 this.transitionToRoute('posts');
             }
 

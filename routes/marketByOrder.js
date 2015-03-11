@@ -5,6 +5,7 @@ StockMarket.PostsMarketByOrderRoute = Ember.Route.extend({
     model: function(params) {
         console.log("This course sucks");
         var store = this.store;
+        var countArray = [1,2,3,4,5,6,7,8,9,10];
         console.log(params.post_id);
         return Ember.RSVP.hash({
             buys: store.find('buy').then(function(buys){

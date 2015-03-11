@@ -11,7 +11,8 @@ StockMarket.ApplicationAdapter = DS.LSAdapter.extend({
 StockMarket.PostAdapter = DS.FixtureAdapter.extend();
 
 
-
+StockMarket.Buy = DS.LSAdapter.extend();
+StockMarket.Sell = DS.LSAdapter.extend();
 
 
 
