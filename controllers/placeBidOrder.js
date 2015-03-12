@@ -7,7 +7,7 @@ StockMarket.PlaceBidOrderController = Ember.ObjectController.extend({
             var company = this.get('model');
             var currentvolume = parseFloat(this.get('numberOfShares'));
             var currentprice = parseFloat(this.get('purchasePrice'));
-            var link = parseFloat(this.get ('id'));
+            var link = this.get ('id');
             var sharetraded = 0;
 
             var sellstocks = company.get('sellOrders');
@@ -25,6 +25,7 @@ StockMarket.PlaceBidOrderController = Ember.ObjectController.extend({
 
                     //if sellorder has more shares than the bidorder
                     if(tempvolume > currentvolume){
+                        alert("tempvolume > currentvolume");
                         var trade = tempvolume - currentvolume;
 
                         sellstocks.objectAt(i).set('volume', tempvolume - currentvolume);
@@ -34,7 +35,14 @@ StockMarket.PlaceBidOrderController = Ember.ObjectController.extend({
                     }
                     //else if the volume is exactly equal
                     else if(tempvolume == currentvolume){
-                        sellstocks.removeAt(i);
+                        alert ("tempvolume == currentvolume");
+                        console.log("sellstocks: ", sellstocks);
+
+                        sellstocks.objectAt(i).destroyRecord();
+
+                        //var id = sellstocks.objectAt(i).get('id');
+                        //sellstocks.removeObject(id);
+                        console.log("sellstocks: ", sellstocks);
 
                         //added traded shares and reset input shares
                         sharetraded += currentvolume;
@@ -45,15 +53,18 @@ StockMarket.PlaceBidOrderController = Ember.ObjectController.extend({
                     }
                     //else if sell has less shares than the buy
                     else{
+                        alert ("tempvolume < current volume");
                         sharetraded += tempvolume;
                         currentvolume= currentvolume - tempvolume;
-                        sellstocks.removeAt(i);
+                        sellstocks.objectAt(i).destroyRecord();
                     }
 
                 }//end if statement
             }//end for loop
 
             if(currentvolume > 0) {
+                alert ("currentvolume > 0 ");
+
                 var newbuyorder;
                 newbuyorder = this.store.createRecord('buy',{
                     companyid: link,
@@ -67,7 +78,13 @@ StockMarket.PlaceBidOrderController = Ember.ObjectController.extend({
                     newbuyorder.set('company',post);
                     newbuyorder.save();
 
-                })
+
+                });
+                //this.store.save();
+
+                //company.save();
+
+
 
                 //save sellorder
                 //newbuyorder.save();
@@ -86,7 +103,7 @@ StockMarket.PlaceBidOrderController = Ember.ObjectController.extend({
             //TODO: update change
             var change = parseFloat(company.get('lastSale')) - parseFloat(company.get('openPrice'));
             company.set('changeNet', change);
-            var changePercentage = change /100;
+            var changePercentage = (change /parseFloat(company.get('openPrice')))*100;
             company.set('changePercent', changePercentage);
 
             //if to see if the change is positive, negative, or neutral to change pictures
