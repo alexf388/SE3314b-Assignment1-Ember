@@ -61,15 +61,23 @@ StockMarket.PlaceBidOrderController = Ember.ObjectController.extend({
                     price:  this.get('purchasePrice')
                 });
 
-                //save sellorder
-                newbuyorder.save();
+                this.store.find('post',link).then(function(post){
+//                    post.get('bidOrders').addObject(newBuy);
+//                    post.save();
+                    newbuyorder.set('company',post);
+                    newbuyorder.save();
 
-                console.log("lol");
+                })
+
+                //save sellorder
+                //newbuyorder.save();
 
                 //save data to company's sellOrders
+                /*
                 company = this.get('model');
                 company.get('bidOrders').pushObject(newbuyorder);
                 company.save();
+                */
             }
 
             //update share volume
