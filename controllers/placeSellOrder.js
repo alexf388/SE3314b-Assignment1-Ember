@@ -32,6 +32,7 @@ StockMarket.PlaceSellOrderController = Ember.ObjectController.extend({
                         buystocks.objectAt(i).set('volume', tempvolume - currentvolume);
 
                         sharetraded += trade;
+                        currentvolume = 0;
                         break;
                     }
                     //else if the volume is exactly equal
